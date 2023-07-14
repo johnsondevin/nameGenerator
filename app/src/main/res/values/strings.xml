@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">nameGenerator</string>
+    <string name="new_name">New Name</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="textview">TextView</string>
 </resources>
