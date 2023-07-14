@@ -13,14 +13,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val generateButton: Button = findViewById(R.id.button)
-        val chooseGender: Switch = findViewById(R.id.switch1)
+        val generateButton: Button = findViewById(R.id.button) // Save button to val
+        val chooseGender: Switch = findViewById(R.id.switch1) // Save switch to val
 
         val genderTextView: TextView = findViewById(R.id.textView2)
 
         var gender: Char
 
-        if (chooseGender.isChecked) {
+        if (chooseGender.isChecked) { // Check the initial state of the switch
             gender = 'M'
             genderTextView.text = "Male"
         } else {
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             genderTextView.text = "Female"
         }
 
-        chooseGender.setOnCheckedChangeListener{_, isChecked ->
+        chooseGender.setOnCheckedChangeListener{_, isChecked -> // Set eventListener for switch
             if (isChecked) {
                 genderTextView.text = "Male"
                 gender = 'M'
@@ -40,17 +40,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         generateButton.setOnClickListener{
-            generateName(gender)
+            generateName(gender) // Get new name
         }
 
     }
 
     @SuppressLint("SetTextI18n")
-    private fun generateName(Gender: Char) { // Function for button
-//        val dice = Dice(6)
-//        val diceRoll = dice.roll()
-//        val resultTextView: TextView = findViewById(R.id.textView)
-//        resultTextView.text = diceRoll.toString()
+    private fun generateName(Gender: Char) { // Function to create new name
         val person = Person()
         var firstName = person.firstName
         var lastName = person.lastName
@@ -58,9 +54,9 @@ class MainActivity : AppCompatActivity() {
         val resultTextView: TextView = findViewById(R.id.textView)
 
         if (Gender == 'M') {
-            firstName = person.giveMaleName()
+            firstName = person.giveMaleName() // Get male name
         } else if (Gender == 'F') {
-            firstName = person.giveFemaleName()
+            firstName = person.giveFemaleName() // Get female name
         }
         lastName = person.giveLastName()
 
@@ -77,14 +73,14 @@ class Person() {
     var lastName = "is Devin"
 
     fun giveMaleName(): String {
-        return maleNames.random() // String of male first name
+        return maleNames.random() // Return string of male first name
     }
 
     fun giveFemaleName(): String {
-        return femaleNames.random() // String of female first name
+        return femaleNames.random() // Return string of female first name
     }
 
     fun giveLastName(): String{
-        return lastNames.random() // String of last name
+        return lastNames.random() // Return string of last name
     }
 }
