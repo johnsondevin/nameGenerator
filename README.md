@@ -8,7 +8,7 @@ I created this app to understand how to use the Android SDK and to better unders
 
 Here is a video demonstration of my application and the code behind it.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/NjUGp7CiVXw)
 
 # Development Environment
 
